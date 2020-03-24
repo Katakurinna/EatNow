@@ -37,7 +37,7 @@ public class LoginPanel extends JPanel {
         loginButton = new JButton();
         acceptedTermsCheckBox = new Checkbox();
 
-        setPreferredSize(new Dimension(1115, 476));
+        setPreferredSize(new Dimension(1115, 500));
         setLayout(new GridBagLayout());
 
         jLabel1.setText("Nombre:");
