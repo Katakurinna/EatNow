@@ -1,5 +1,7 @@
 package me.cerratolabs.eatnow.clientmanager.view.defaultview;
 
+import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,8 +16,8 @@ public class ImagePanel extends JPanel {
     public ImagePanel(File imagePath) {
         try {
             image = ImageIO.read(imagePath);
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        } catch (IOException e) {
+            AppLog.addError(e);
         }
     }
 
