@@ -1,11 +1,7 @@
 package me.cerratolabs.eatnow.clientmanager.view.login;
 
 import javax.swing.*;
-import java.awt.Checkbox;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.*;
 
 public class LoginPanel extends JPanel {
 
@@ -133,7 +129,7 @@ public class LoginPanel extends JPanel {
         gridBagConstraints.insets = new Insets(23, 10, 116, 0);
         add(registerButton, gridBagConstraints);
 
-        loginButton.setText("Iniciar sesion");
+        loginButton.setText("Iniciar sesión");
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
@@ -151,8 +147,6 @@ public class LoginPanel extends JPanel {
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(10, 10, 0, 413);
         add(acceptedTermsCheckBox, gridBagConstraints);
-        setVisible(true);
-
     }
 
 }

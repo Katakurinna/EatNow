@@ -28,7 +28,7 @@ public class AppLog {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        addInfo("Iniciated application.");
+        addInfoMessage("Iniciated application.");
     }
     private static String getCurrentDateFile() {
         return new SimpleDateFormat("yyyy-MM-dd HH.mm ").format(new Date());
@@ -43,14 +43,29 @@ public class AppLog {
         logger.log(Level.INFO, message, exception);
     }
 
+    public static void addInfoMessage(String exception) {
+        String message = "INFO: " + getCurrentDate() + ": ";
+        logger.log(Level.INFO, message + exception);
+    }
+
     public static void addWarning(Object exception) {
         String message = "WARNING: " + getCurrentDate() + ": ";
         logger.log(Level.WARNING, message, exception);
     }
 
+    public static void addWarningMessage(String exception) {
+        String message = "WARNING: " + getCurrentDate() + ": ";
+        logger.log(Level.WARNING, message + exception);
+    }
+
     public static void addError(Object exception) {
         String message = "ERROR: " + getCurrentDate() + ": ";
         logger.log(Level.SEVERE, message, exception);
+    }
+
+    public static void addErrorMessage(String exception) {
+        String message = "WARNING: " + getCurrentDate() + ": ";
+        logger.log(Level.SEVERE, message + exception);
     }
 }
 
