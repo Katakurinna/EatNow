@@ -2,14 +2,19 @@ package me.cerratolabs.eatnow.clientmanager.view.defaultview;
 
 import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 
-import java.awt.Graphics;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ImagePanel extends JPanel {
+
+    // Logger
+    private Logger logger = Logger.getLogger(AppLog.getLoggerName());
 
     private BufferedImage image;
 
@@ -17,7 +22,7 @@ public class ImagePanel extends JPanel {
         try {
             image = ImageIO.read(imagePath);
         } catch (IOException e) {
-            AppLog.error(e);
+            logger.log(Level.SEVERE, null, e);
         }
     }
 
@@ -30,5 +35,4 @@ public class ImagePanel extends JPanel {
         super.paintComponent(g);
         g.drawImage(image, 0, 0, this);
     }
-
 }

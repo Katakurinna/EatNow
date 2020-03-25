@@ -3,19 +3,23 @@ package me.cerratolabs.eatnow.clientmanager.view.defaultview;
 import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Alejandro Cerrato Espejo
  */
 public class DefaultWindows extends JFrame {
 
+    // Singleton instance
     private static DefaultWindows defaultWindows = new DefaultWindows();
 
-    private static final int WINDOW_HEIGHT = 600 + 63;
-    private static final int WINDOW_WIDTH = 1135;
+    // Logger
+    private Logger logger = Logger.getLogger(AppLog.getLoggerName());
 
+    private static final int WINDOW_HEIGHT = 600;
+    private static final int WINDOW_WIDTH = 1135;
 
     private JPanel logoPanel = new JPanel();
     private JPanel variablePanel = new JPanel();
@@ -35,7 +39,7 @@ public class DefaultWindows extends JFrame {
     }
 
     private void setHeight(int height) {
-        setSize(WINDOW_WIDTH, 163 + height);
+        setSize(WINDOW_WIDTH, 100 + height);
     }
 
     private void setHeight(JPanel panel) {
@@ -71,10 +75,9 @@ public class DefaultWindows extends JFrame {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            AppLog.error(e);
+            logger.log(Level.SEVERE, null, e);
         }
 
-        //setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle(ViewConstants.EATNOW_WINDOWS_TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());

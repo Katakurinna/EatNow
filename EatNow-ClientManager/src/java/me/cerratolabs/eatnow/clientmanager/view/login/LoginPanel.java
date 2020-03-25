@@ -5,7 +5,6 @@ import java.awt.*;
 
 public class LoginPanel extends JPanel {
 
-
     public LoginPanel() {
         initComponents();
     }
