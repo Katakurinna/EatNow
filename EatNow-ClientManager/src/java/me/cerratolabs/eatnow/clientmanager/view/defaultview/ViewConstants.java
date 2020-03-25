@@ -1,7 +1,6 @@
 package me.cerratolabs.eatnow.clientmanager.view.defaultview;
 
 /**
- *
  * @author Alejandro Cerrato Espejo
  */
 public class ViewConstants {

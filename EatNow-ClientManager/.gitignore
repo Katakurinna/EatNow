@@ -4,3 +4,4 @@ out
 EatNow-ClientManager.iml
 *.log
 *.log.lck
+logs

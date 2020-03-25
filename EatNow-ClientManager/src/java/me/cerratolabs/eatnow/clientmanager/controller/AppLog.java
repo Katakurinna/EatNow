@@ -22,7 +22,7 @@ public class AppLog {
 
         try {
             String currentDate = getCurrentDateFile();
-            String fileName = LOG_DIRECTORY + File.pathSeparator + currentDate + "-EatNow.log";
+            String fileName = LOG_DIRECTORY + File.separatorChar + currentDate + "-EatNow.log";
             FileHandler fh = new FileHandler(fileName);
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
@@ -33,10 +33,10 @@ public class AppLog {
 
         info("Initiated application.");
 
-        if(createDirectoryIfNotExist()){
-            info("Created " + LOG_DIRECTORY + " directory.");
-        }else{
-            info(LOG_DIRECTORY + " already exist.");
+        if (createDirectoryIfNotExist()) {
+            info("Folder '" + LOG_DIRECTORY + "' has been created.");
+        } else {
+            info("Folder '" + LOG_DIRECTORY + "' already exist.");
         }
     }
 
