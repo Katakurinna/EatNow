@@ -34,11 +34,24 @@ public class DefaultWindows extends JFrame {
         initComponents();
     }
 
+    private void setHeight(int height) {
+        setSize(WINDOW_WIDTH, 163 + height);
+    }
+
+    private void setHeight(JPanel panel) {
+        int height = panel.getHeight();
+        if (height == 0) {
+            height = panel.getPreferredSize().height;
+        }
+        setHeight(height);
+    }
+
     public void setVariablePanel(JPanel panel) {
         variablePanel.setVisible(false);
         variablePanel.removeAll();
         variablePanel.add(panel);
         variablePanel.setVisible(true);
+        setHeight(panel);
     }
 
     private void declareVariablePanel() {
@@ -61,11 +74,11 @@ public class DefaultWindows extends JFrame {
             AppLog.error(e);
         }
 
-        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        //setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle(ViewConstants.EATNOW_WINDOWS_TITLE);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
-        //setResizable(false);
+        setResizable(false);
 
         declareLogoPanel();
         declareVariablePanel();
