@@ -13,13 +13,13 @@ public class AppLog {
     private static Logger logger = Logger.getLogger("MyLog");
     private static String LOG_DIRECTORY = "logs";
 
-    private static void createDirectoryIfNotExist() {
+    private static boolean createDirectoryIfNotExist() {
         File directory = new File(LOG_DIRECTORY);
-        directory.mkdir();
+        return directory.mkdir();
     }
 
     public static void startLogger() {
-        createDirectoryIfNotExist();
+
         try {
             String currentDate = getCurrentDateFile();
             String fileName = LOG_DIRECTORY + File.pathSeparator + currentDate + "-EatNow.log";
@@ -32,6 +32,12 @@ public class AppLog {
         }
 
         info("Initiated application.");
+
+        if(createDirectoryIfNotExist()){
+            info("Created " + LOG_DIRECTORY + " directory.");
+        }else{
+            info(LOG_DIRECTORY + " already exist.");
+        }
     }
 
     private static String getCurrentDateFile() {
@@ -78,4 +84,3 @@ public class AppLog {
     }
 
 }
-
