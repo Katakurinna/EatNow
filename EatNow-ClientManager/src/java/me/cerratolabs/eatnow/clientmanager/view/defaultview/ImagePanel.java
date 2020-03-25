@@ -17,7 +17,7 @@ public class ImagePanel extends JPanel {
         try {
             image = ImageIO.read(imagePath);
         } catch (IOException e) {
-            AppLog.addError(e);
+            AppLog.error(e);
         }
     }
 

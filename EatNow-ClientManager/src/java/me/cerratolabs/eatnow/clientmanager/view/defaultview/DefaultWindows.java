@@ -20,6 +20,12 @@ public class DefaultWindows extends JFrame {
     private JPanel logoPanel = new JPanel();
     private JPanel variablePanel = new JPanel();
 
+    /**
+     * This method should return a singleton of the DefaultWindow window.
+     *
+     * @return DefaultWindows instance.
+     * @see #setVariablePanel(JPanel)
+     */
     public static DefaultWindows getInstance() {
         return defaultWindows;
     }
@@ -52,7 +58,7 @@ public class DefaultWindows extends JFrame {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            AppLog.addError(e);
+            AppLog.error(e);
         }
 
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
