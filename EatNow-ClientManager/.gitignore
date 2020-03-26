@@ -1,7 +1,12 @@
-#INTELLIJ IDEA IGNORE FILES
-.idea
-out
-EatNow-ClientManager.iml
+NTELLIJ IDEA IGNORE FILES
+*.idea
+*.iml
+
+# Logs
 *.log
 *.log.lck
-logs
+logs/
+
+# Build
+**target/
+**out/

@@ -91,4 +91,19 @@ public class DefaultWindows extends JFrame {
         declareVariablePanel();
     }
 
+    /**
+     * @param message     the <code>Object</code> to display
+     * @param title       the <code>String</code> to display in the dialog
+     *                    title bar
+     * @param messageType the type of message that is to be displayed:
+     *                    <code>JOptionPane.ERROR_MESSAGE</code>,
+     *                    <code>JOptionPane.INFORMATION_MESSAGE</code>,
+     *                    <code>JOptionPane.WARNING_MESSAGE</code>,
+     *                    <code>JOptionPane.QUESTION_MESSAGE</code>,
+     *                    or <code>JOptionPane.PLAIN_MESSAGE</code>
+     */
+    public void createJOptionPanel(String title, String message, int messageType) {
+        JOptionPane.showMessageDialog(this, message, title, messageType);
+    }
+
 }

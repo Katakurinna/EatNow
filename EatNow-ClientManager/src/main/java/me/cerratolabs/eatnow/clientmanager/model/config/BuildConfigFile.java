@@ -15,10 +15,10 @@ public class BuildConfigFile {
     // Logger instance
     private static Logger logger = Logger.getLogger("EatNow");
 
-    public static void createConfigurationFile(){
+    public static void createConfigurationFile() {
         Properties properties = new Properties();
-        properties.setProperty("ServerAddress", "192.168.0.30");
-        properties.setProperty("ServerPort", "3121");
+        properties.setProperty(ModelConstants.KEY_SERVER_ADDRESS, "192.168.0.30");
+        properties.setProperty(ModelConstants.KEY_SERVER_PORT, "3121");
 
         FileOutputStream fileOutputStream = null;
         try {

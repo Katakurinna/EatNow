@@ -18,14 +18,6 @@ public class MClass {
         d.setVariablePanel(new LoadingPanel());
         d.setVisible(true);
         logger.info("Application has been initiated.");
-
-        ConnectionController connectionController = ConnectionController.getInstance();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        d.setVariablePanel(new RegisterPanel());
+        ConnectionController.getInstance();
     }
 }
