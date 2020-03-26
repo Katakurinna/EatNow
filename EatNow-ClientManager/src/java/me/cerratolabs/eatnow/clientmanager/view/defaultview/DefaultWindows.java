@@ -4,6 +4,9 @@ import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,8 +21,6 @@ public class DefaultWindows extends JFrame {
     // Logger
     private Logger logger = Logger.getLogger(AppLog.getLoggerName());
 
-    private static final int WINDOW_HEIGHT = 600;
-    private static final int WINDOW_WIDTH = 1135;
 
     private JPanel logoPanel = new JPanel();
     private JPanel variablePanel = new JPanel();
@@ -38,8 +39,21 @@ public class DefaultWindows extends JFrame {
         initComponents();
     }
 
+    public void setVariablePanel(JPanel panel) {
+        variablePanel.setVisible(false);
+        variablePanel.removeAll();
+        variablePanel.add(panel);
+        variablePanel.setVisible(true);
+        setHeight(panel);
+        logChangePanel(panel);
+    }
+
+    private void logChangePanel(JPanel panel) {
+        logger.info("Changed windows panel to " + panel.getClass().getName());
+    }
+
     private void setHeight(int height) {
-        setSize(WINDOW_WIDTH, 100 + height);
+        setSize(ViewConstants.WINDOW_WIDTH, 100 + height);
     }
 
     private void setHeight(JPanel panel) {
@@ -50,13 +64,6 @@ public class DefaultWindows extends JFrame {
         setHeight(height);
     }
 
-    public void setVariablePanel(JPanel panel) {
-        variablePanel.setVisible(false);
-        variablePanel.removeAll();
-        variablePanel.add(panel);
-        variablePanel.setVisible(true);
-        setHeight(panel);
-    }
 
     private void declareVariablePanel() {
         getContentPane().add(variablePanel, BorderLayout.SOUTH);
@@ -65,7 +72,7 @@ public class DefaultWindows extends JFrame {
     private void declareLogoPanel() {
         ImagePanel imgPanel = new ImagePanel(ViewConstants.EATNOW_LOGO_PATH);
         imgPanel.setLayout(new FlowLayout());
-        imgPanel.setPreferredSize(new Dimension(WINDOW_WIDTH - 20, 100));
+        imgPanel.setPreferredSize(new Dimension(ViewConstants.WINDOW_WIDTH, 100));
         logoPanel.add(imgPanel);
         getContentPane().add(logoPanel, BorderLayout.NORTH);
     }

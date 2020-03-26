@@ -1,11 +1,13 @@
 package me.cerratolabs.eatnow.clientmanager.view.login;
 
+import me.cerratolabs.eatnow.clientmanager.view.defaultview.ViewConstants;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginPanel extends JPanel {
+public class RegisterPanel extends JPanel {
 
-    public LoginPanel() {
+    public RegisterPanel() {
         initComponents();
     }
 
@@ -36,8 +38,8 @@ public class LoginPanel extends JPanel {
         loginButton = new JButton();
         acceptedTermsCheckBox = new Checkbox();
 
-        setPreferredSize(new Dimension(1115, 500));
-        setSize(new Dimension(1115, 500));
+        setPreferredSize(new Dimension(ViewConstants.WINDOW_WIDTH, ViewConstants.WINDOW_HEIGHT));
+        setSize(new Dimension(ViewConstants.WINDOW_WIDTH, ViewConstants.WINDOW_HEIGHT));
         setLayout(new GridBagLayout());
 
         jLabel1.setText("Nombre:");

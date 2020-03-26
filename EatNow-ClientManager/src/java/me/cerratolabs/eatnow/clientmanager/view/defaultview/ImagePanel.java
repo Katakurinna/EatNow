@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,16 +19,16 @@ public class ImagePanel extends JPanel {
 
     private BufferedImage image;
 
-    public ImagePanel(File imagePath) {
+    public ImagePanel(File url) {
         try {
-            image = ImageIO.read(imagePath);
+            image = ImageIO.read(url);
         } catch (IOException e) {
             logger.log(Level.SEVERE, null, e);
         }
     }
 
-    public ImagePanel(String imagePath) {
-        this(new File(imagePath));
+    public ImagePanel(String url) {
+        this(new File(url));
     }
 
     @Override
