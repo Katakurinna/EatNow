@@ -1,28 +1,33 @@
 package me.cerratolabs.eatnow.clientmanager.model.config;
 
+import me.cerratolabs.eatnow.clientmanager.model.ModelConstants;
+
+import java.io.File;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class ConfigFile {
 
-    // Singleton instance
-    private static ConfigFile configFile = new ConfigFile();
+    // Logger instance
+    private static Logger logger = Logger.getLogger("EatNow");
 
-    private Properties properties;
+    // Properties file instance
+    private static Properties properties;
 
-    private ConfigFile() {
-        properties = new Properties();
+    public static void loadPropertiesFile() {
+
+        // Log message 'Trying to load configuration file...'
+        logger.info("Trying to load configuration file...");
+
+        // Configuration file from ModelConstants.CONFIG_FILE_PATH path
+        File configurationFile = new File(ModelConstants.CONFIG_FILE_PATH);
+
+        // If it does not exist, it generates it
+        if(!configurationFile.exists()){
+            BuildConfigFile.createConfigurationFile();
+
+            logger.info("Generated '"+ModelConstants.CONFIG_FILE_PATH+"' file that contains the default configuration");
+        }
     }
 
-    /**
-     * This method should return a singleton of the ConfigFile model.
-     *
-     * @return ConfigFile instance.
-     */
-    public static ConfigFile getInstance() {
-        return configFile;
-    }
-
-    public void setPropertiesFile(){
-
-    }
 }

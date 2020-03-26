@@ -1,6 +1,7 @@
 package me.cerratolabs.eatnow.clientmanager;
 
 import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
+import me.cerratolabs.eatnow.clientmanager.controller.ConnectionController;
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.DefaultWindows;
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.LoadingPanel;
 import me.cerratolabs.eatnow.clientmanager.view.login.RegisterPanel;
@@ -18,6 +19,7 @@ public class MClass {
         d.setVisible(true);
         logger.info("Application has been initiated.");
 
+        ConnectionController connectionController = ConnectionController.getInstance();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

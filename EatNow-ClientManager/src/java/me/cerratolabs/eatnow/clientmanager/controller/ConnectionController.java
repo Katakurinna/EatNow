@@ -1,17 +1,21 @@
 package me.cerratolabs.eatnow.clientmanager.controller;
 
+import me.cerratolabs.eatnow.clientmanager.model.config.ConfigFile;
+
 import java.net.Socket;
 
 public class ConnectionController {
 
     // Singleton instance
-    public static ConnectionController connectionController = new ConnectionController();
+    private static ConnectionController connectionController = new ConnectionController();
 
     private Socket socket;
 
     private ConnectionController() {
-
+        ConfigFile.loadPropertiesFile();
     }
+
+
 
     /**
      * This method should return a singleton of the ConnectionController controller.

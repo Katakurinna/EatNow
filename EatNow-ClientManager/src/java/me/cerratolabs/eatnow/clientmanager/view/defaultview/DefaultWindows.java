@@ -19,9 +19,6 @@ public class DefaultWindows extends JFrame {
     private static DefaultWindows defaultWindows = new DefaultWindows();
 
     // Logger
-    private Logger logger = Logger.getLogger(AppLog.getLoggerName());
-
-
     private JPanel logoPanel = new JPanel();
     private JPanel variablePanel = new JPanel();
 
@@ -49,7 +46,7 @@ public class DefaultWindows extends JFrame {
     }
 
     private void logChangePanel(JPanel panel) {
-        logger.info("Changed windows panel to " + panel.getClass().getName());
+        AppLog.getLogger().info("Changed windows panel to " + panel.getClass().getName());
     }
 
     private void setHeight(int height) {
@@ -82,7 +79,7 @@ public class DefaultWindows extends JFrame {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
-            logger.log(Level.SEVERE, null, e);
+            AppLog.getLogger().log(Level.SEVERE, null, e);
         }
 
         setTitle(ViewConstants.EATNOW_WINDOWS_TITLE);

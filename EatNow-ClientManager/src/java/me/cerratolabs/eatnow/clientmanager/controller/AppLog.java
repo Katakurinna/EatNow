@@ -23,6 +23,10 @@ public class AppLog {
         return loggerName;
     }
 
+    public static Logger getLogger(){
+        return logger;
+    }
+
     public static void startLogger() {
 
         boolean isDirectoryCreated = createDirectoryIfNotExist();
