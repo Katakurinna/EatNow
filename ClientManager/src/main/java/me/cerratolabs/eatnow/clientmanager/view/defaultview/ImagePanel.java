@@ -31,6 +31,15 @@ public class ImagePanel extends JPanel {
         this(new File(url));
     }
 
+    public ImagePanel(URL url) {
+        try {
+            System.out.println(url);
+            image = ImageIO.read(url);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, null, e);
+        }
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
