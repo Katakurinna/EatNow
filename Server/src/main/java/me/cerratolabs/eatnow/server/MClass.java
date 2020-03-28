@@ -1,3 +1,5 @@
+package me.cerratolabs.eatnow.server;
+
 import java.security.NoSuchAlgorithmException;
 
 public class MClass {

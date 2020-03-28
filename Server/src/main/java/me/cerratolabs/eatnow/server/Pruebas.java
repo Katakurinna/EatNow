@@ -1,3 +1,5 @@
+package me.cerratolabs.eatnow.server;
+
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

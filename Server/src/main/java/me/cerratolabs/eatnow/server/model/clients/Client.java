@@ -1,4 +1,4 @@
-package me.cerratolabs.eatnow.server.clients;
+package me.cerratolabs.eatnow.server.model.clients;
 
 import java.net.Socket;
 
