@@ -1,7 +1,7 @@
 package me.cerratolabs.eatnow.clientmanager.controller;
 
 import me.cerratolabs.eatnow.clientmanager.model.ModelConstants;
-import me.cerratolabs.eatnow.clientmanager.model.config.ConfigFile;
+import me.cerratolabs.eatnow.clientmanager.model.config.ConfigLoader;
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.DefaultWindows;
 
 import javax.swing.*;
@@ -35,25 +35,16 @@ public class ConnectionController {
 
     private ConnectionController() {
         try {
-            ConfigFile.loadPropertiesFile();
+            ConfigLoader.loadPropertiesFile();
         } catch (IOException e) {
             String errorMSG = "Cant load properties file: '" + ModelConstants.CONFIG_FILE_PATH + "'.";
             logger.severe(errorMSG);
             logger.log(Level.SEVERE, null, e);
         }
 
-        try {
-            socket = new Socket(ConfigFile.getServerAddress(), ConfigFile.getServerPort());
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, null, e);
-        }
 
-        try {
-            clientStream = new ClientStream(socket);
-        } catch (IOException e) {
-            clientStream.isConnected();
-        }
 
+            clientStream = new ClientStream(ConfigLoader.getServerAddress(), ConfigLoader.getServerPort());
 
 
     }

@@ -4,7 +4,6 @@ import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 import me.cerratolabs.eatnow.clientmanager.controller.ConnectionController;
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.DefaultWindows;
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.LoadingPanel;
-import me.cerratolabs.eatnow.clientmanager.view.login.RegisterPanel;
 
 import java.util.logging.Logger;
 

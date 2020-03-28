@@ -106,4 +106,12 @@ public class DefaultWindows extends JFrame {
         JOptionPane.showMessageDialog(this, message, title, messageType);
     }
 
+    public void errorConnectionDialog() {
+        String title = "Server connection refused";
+        String message = "Cant connect to server, connection refused." + "\n" +
+                "Reconnection will be attempted until successful or you close the application";
+
+        createJOptionPanel(title, message, JOptionPane.ERROR_MESSAGE);
+    }
+
 }

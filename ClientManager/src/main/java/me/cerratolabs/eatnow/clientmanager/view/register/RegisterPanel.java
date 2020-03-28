@@ -1,4 +1,4 @@
-package me.cerratolabs.eatnow.clientmanager.view.login;
+package me.cerratolabs.eatnow.clientmanager.view.register;
 
 import me.cerratolabs.eatnow.clientmanager.view.defaultview.ViewConstants;
 

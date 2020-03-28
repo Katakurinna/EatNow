@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class ConfigFile {
+public class ConfigLoader {
 
     // Logger instance
     private static Logger logger = Logger.getLogger("EatNow");
@@ -45,9 +45,8 @@ public class ConfigFile {
     }
 
     private static void loadFile() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(ModelConstants.CONFIG_FILE_PATH);
+        File configurationFile = new File(ModelConstants.CONFIG_FILE_PATH);
+        FileInputStream fileInputStream = new FileInputStream(configurationFile);
         properties.load(fileInputStream);
     }
-
-
 }

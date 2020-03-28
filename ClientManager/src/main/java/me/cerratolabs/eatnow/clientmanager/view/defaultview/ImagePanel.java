@@ -33,7 +33,6 @@ public class ImagePanel extends JPanel {
 
     public ImagePanel(URL url) {
         try {
-            System.out.println(url);
             image = ImageIO.read(url);
         } catch (IOException e) {
             logger.log(Level.SEVERE, null, e);

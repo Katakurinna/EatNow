@@ -1,9 +1,11 @@
 package me.cerratolabs.eatnow.clientmanager.model.config;
 
-import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 import me.cerratolabs.eatnow.clientmanager.model.ModelConstants;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -22,7 +24,8 @@ public class BuildConfigFile {
 
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = new FileOutputStream(ModelConstants.CONFIG_FILE_PATH);
+            File configurationFile = new File(ModelConstants.CONFIG_FILE_PATH);
+            fileOutputStream = new FileOutputStream(configurationFile);
 
             // Get current date
             String date = new SimpleDateFormat("yyyy-MM-dd HH.mm ").format(new Date());
@@ -32,6 +35,7 @@ public class BuildConfigFile {
 
             // Saved configuration file.
             properties.store(fileOutputStream, comments);
+
         } catch (IOException e) {
             logger.log(Level.SEVERE, null, e);
         }
