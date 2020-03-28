@@ -6,6 +6,10 @@ public class ModelConstants {
     public static final String TOKEN_FILE_PATH = "src\\resources\\configFiles\\token.dat";
 
     // Properties file keys
-    public static final String KEY_SERVER_ADDRESS = "ServerAddress";
-    public static final String KEY_SERVER_PORT = "ServerPort";
+    public static final String SERVER_ADDRESS_NAME = "ServerAddress";
+    public static final String SERVER_PORT_NAME = "ServerPort";
+
+    // Properties file value
+    public static final String SERVER_ADDRESS_DEFAULT_VALUE = "192.168.0.30";
+    public static final String SERVER_PORT_DEFAULT_VALUE = "3121";
 }

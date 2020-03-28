@@ -37,11 +37,11 @@ public class ConfigLoader {
     }
 
     public static String getServerAddress() {
-        return properties.getProperty(ModelConstants.KEY_SERVER_ADDRESS);
+        return properties.getProperty(ModelConstants.SERVER_ADDRESS_NAME);
     }
 
     public static int getServerPort() throws NumberFormatException {
-        return Integer.parseInt(properties.getProperty(ModelConstants.KEY_SERVER_PORT));
+        return Integer.parseInt(properties.getProperty(ModelConstants.SERVER_PORT_NAME));
     }
 
     private static void loadFile() throws IOException {

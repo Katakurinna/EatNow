@@ -16,8 +16,7 @@ public class BuildConfigFile {
 
     public static void createConfigurationFile() {
         Properties properties = new Properties();
-        properties.setProperty(ModelConstants.KEY_SERVER_ADDRESS, "192.168.0.30");
-        properties.setProperty(ModelConstants.KEY_SERVER_PORT, "3121");
+        properties.setProperty(ModelConstants.SERVER_PORT_NAME, ModelConstants.SERVER_PORT_DEFAULT_VALUE);
 
         FileOutputStream fileOutputStream = null;
         try {
