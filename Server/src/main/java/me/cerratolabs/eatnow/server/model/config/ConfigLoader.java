@@ -36,10 +36,6 @@ public class ConfigLoader {
 
     }
 
-    public static String getServerAddress() {
-        return properties.getProperty(ModelConstants.SERVER_ADDRESS_NAME);
-    }
-
     public static int getServerPort() throws NumberFormatException {
         return Integer.parseInt(properties.getProperty(ModelConstants.SERVER_PORT_NAME));
     }
