@@ -3,8 +3,6 @@ package me.cerratolabs.eatnow.clientmanager.model;
 import me.cerratolabs.eatnow.clientmanager.controller.AppLog;
 
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ModelConstants {
@@ -23,7 +21,6 @@ public class ModelConstants {
 
     private static URI getResource(String path) {
         try {
-            System.out.println(ModelConstants.class.getClassLoader().getResource(path).toURI());
             return ModelConstants.class.getClassLoader().getResource(path).toURI();
         } catch (Exception e) {
             logger.warning("'" + path + "' file not found.");

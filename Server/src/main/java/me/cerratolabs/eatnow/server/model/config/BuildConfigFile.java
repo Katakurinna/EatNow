@@ -1,6 +1,6 @@
 package me.cerratolabs.eatnow.server.model.config;
-import me.cerratolabs.eatnow.server.model.ModelConstants;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -16,17 +16,17 @@ public class BuildConfigFile {
 
     public static void createConfigurationFile() {
         Properties properties = new Properties();
-        properties.setProperty(ModelConstants.SERVER_PORT_NAME, ModelConstants.SERVER_PORT_DEFAULT_VALUE);
+        properties.setProperty(ConfigConstants.SERVER_PORT_NAME, ConfigConstants.SERVER_PORT_DEFAULT_VALUE);
 
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(ModelConstants.CONFIG_FILE_PATH);
-
+        //FileOutputStream fileOutputStream = null;
+        try (FileOutputStream fileOutputStream = new FileOutputStream(new File(ConfigConstants.CONFIG_FILE_PATH))) {
             // Get current date
             String date = new SimpleDateFormat("yyyy/MM/dd HH:mm").format(new Date());
 
             // Generate comments in the file.
-            String comments = "EatNow Server Config File\n File creation date: '" + date + "'\n This file has been generated automatically because the configuration file could not be found.";
+            String comments = "EatNow Server Config File\n" +
+                    " File creation date: '" + date + "'\n" +
+                    " This file has been generated automatically because the configuration file could not be found.";
 
             // Saved configuration file.
             properties.store(fileOutputStream, comments);
@@ -34,5 +34,4 @@ public class BuildConfigFile {
             logger.log(Level.SEVERE, null, e);
         }
     }
-
 }
